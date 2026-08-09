@@ -4,8 +4,6 @@ const fetch = require("node-fetch")
 
 module.exports = { log, error, trace, registerElectron, send, sendRecent, setMainWindow, checkVersion, addStatAndSend, saveStats, getStatsPath: () => statsPath, setStatsPath: (path) => statsPath = path }
 
-const { checkMitmCert, installMitmCert, uninstallMitmCert } = require("./proxy")
-
 // Log source for internally-generated messages
 const logSource = "kccp-logger"
 
@@ -181,6 +179,7 @@ function registerElectron(ipcMain, app, al) {
 
     const config = require("./config")
     const { verifyCache, mergeCache, createDiff, clearMain } = require("./cacheHandler")
+    const { checkMitmCert, installMitmCert, uninstallMitmCert } = require("./proxy")
     const { extractSplit, importExternalMod, outlines } = require("./mod/modderUtils")
     const { reloadModCache, prepatch } = require("./mod/patcher")
     const { handleModInstallation, updateMod } = require("./mod/gitModHandler")
