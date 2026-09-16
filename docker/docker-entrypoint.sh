@@ -1,9 +1,4 @@
-file=./src/$1.js
-
-shift
-
-if [ -f $file ]; then
-  node $file $@
-else
-  echo "Command not found"
-fi
+#!/bin/sh
+# KCCacheProxy Go entrypoint
+# Usage: ./docker-entrypoint.sh [proxy|mod:command]
+exec /app/main "$@"
