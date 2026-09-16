@@ -1,5 +1,6 @@
 node_modules/
 .vscode/
+opencode.json
 
 out/
 cache/
